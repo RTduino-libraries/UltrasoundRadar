@@ -19,7 +19,7 @@ int calculateDistance()
     digitalWrite(trigPin, HIGH);
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW);
-    duration = pulseIn(echoPin, HIGH); // Reads the echoPin, returns the sound wave travel time in microseconds
+    duration = pulseIn(echoPin,2, HIGH); // Reads the echoPin, returns the sound wave travel time in microseconds
     distance= duration*0.034/2;
     return distance;
 }
@@ -29,7 +29,7 @@ void setup()
     pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
     pinMode(echoPin, INPUT); // Sets the echoPin as an Input
     Serial.begin(115200);
-    myServo.attach(12); // Defines on which pin is the servo motor attached
+    myServo.attach(9); // Defines on which pin is the servo motor attached
 }
 void loop()
 {
