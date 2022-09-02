@@ -2,6 +2,6 @@ from building import *
 
 src = ['radar.cpp']
 
-group = DefineGroup('Arduino', src, depend = ['PKG_USING_RTDUINO'])
+group = DefineGroup('Arduino-UltrasoundRadar', src, depend = ['PKG_USING_ULTRASOUND_RADAR'])
 
 Return('group')
