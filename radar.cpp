@@ -28,7 +28,7 @@ void setup()
 {
     pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
     pinMode(echoPin, INPUT); // Sets the echoPin as an Input
-    Serial.begin(115200);
+    Serial.begin();
     myServo.attach(D3); // Defines on which pin is the servo motor attached
 }
 void loop()
