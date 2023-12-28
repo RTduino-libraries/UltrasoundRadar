@@ -1,4 +1,4 @@
-// Includes the Servo library
+#include <RTduino.h>
 #include <Servo.h>
 
 // Defines Tirg and Echo pins of the Ultrasonic Sensor
@@ -24,14 +24,14 @@ int calculateDistance()
     return distance;
 }
 
-void setup()
+void radar_setup(void)
 {
     pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
     pinMode(echoPin, INPUT); // Sets the echoPin as an Input
     Serial.begin();
     myServo.attach(D3); // Defines on which pin is the servo motor attached
 }
-void loop()
+void radar_loop(void)
 {
     // rotates the servo motor from 15 to 165 degrees
     for(int i=15;i<=165;i++)
@@ -57,3 +57,4 @@ void loop()
         Serial.print(".");
     }
 }
+RTDUINO_SKETCH_LOADER("radar", radar_setup, radar_loop);
